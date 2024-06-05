@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Test App</title>
+  </head>
+  <body>
+    <h1>Flask Test App</h1>
+
+    <form action="/users" method="POST">
+      <label for="email-input">Email:</label>
+      <input id="email-input" name="email" type="text" required />
+
+      <label for="name-input">Name:</label>
+      <input id="name-input" name="name" type="text" required />
+
+      <button>Submit</button>
+    </form>
+
+    <h2>Users</h2>
+
+    <!-- This is jinja2 syntax https://jinja.palletsprojects.com/en/3.1.x/ -->
+    {% for user in users %}
+    <p>{{ user.email }} - {{ user.name }}</p>
+    {% endfor %}
+  </body>
+</html>
